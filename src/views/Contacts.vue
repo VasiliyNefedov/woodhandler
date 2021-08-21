@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="container">
     <h1>This is our contacts</h1>
   </div>
 </template>
@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style scoped>
-
+.container {
+  box-sizing: border-box;
+  min-height: 100%;
+}
 </style>

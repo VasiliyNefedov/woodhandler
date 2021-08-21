@@ -41,6 +41,7 @@
   font-size: larger;
   /*font-weight: bold;*/
   color: #2c3e50;
+
 }
 
 #nav a.router-link-exact-active {
@@ -67,5 +68,10 @@
   src: url("./Fonts/Cocogoose Pro.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
+}
+@media screen and (min-width: 1920px) {
+  #nav a {
+    font-size: 1.5em;
+  }
 }
 </style>

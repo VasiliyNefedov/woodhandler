@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .slider {
   margin: 10px 0;
   width: 100%;
@@ -39,6 +39,7 @@ export default {
 }
 
 .header {
+  font-size: 1.2em;
   margin: 100px 0;
 }
 
