@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <div class="slider">banner/slider
-      <Slider @next="next" @prev="prev">
+    <div class="slider">
+      <Slider @next="next" @prev="prev" :interval="interval">
         <SliderItem v-for="(pic, index) in slidePics"
                     :key="pic"
                     :index="index"
@@ -46,6 +46,7 @@ export default {
       slidePics: [`1`, `2`, `3`],
       visibleSlide: 0,
       direction: 'left',
+      interval: 8000,
     }
   },
   computed: {
@@ -55,7 +56,6 @@ export default {
   },
   methods: {
     next() {
-
       if (this.visibleSlide >= this.slidesLen - 1) {
         this.visibleSlide = 0
       } else {
@@ -64,7 +64,6 @@ export default {
       this.direction = 'left'
     },
     prev() {
-
       if (this.visibleSlide <= 0) {
         this.visibleSlide = this.slidesLen - 1
       } else {
@@ -81,7 +80,6 @@ export default {
   margin: 10px 0;
   width: 100%;
   height: 300px;
-  background: #ccc;
 }
 
 .header {
@@ -130,4 +128,5 @@ export default {
   height: 300px;
   background: #ccc;
 }
+
 </style>
