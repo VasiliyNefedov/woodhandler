@@ -15,7 +15,9 @@
     |
     <router-link to="/contacts">Контакты</router-link>
   </div>
-  <router-view/>
+  <transition name="fade" mode="in-out">
+    <router-view/>
+  </transition>
   <footer class="footer">
     
   </footer>
@@ -74,4 +76,35 @@
     font-size: 1.5em;
   }
 }
+
+.fade-enter-active {
+  animation: fadeIn .5s;
+}
+
+/*.fade-leave-active {*/
+/*  animation: fadeOut 1s;*/
+/*}*/
+
+
+@keyframes fadeIn {
+  0% {
+    transform: translateX(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+/*@keyframes fadeOut {*/
+/*  from {*/
+/*    transform: translateX(0);*/
+/*    opacity: 100%;*/
+/*  }*/
+/*  to {*/
+/*    transform: translateX(-10%);*/
+/*    opacity: 0;*/
+/*  }*/
+/*}*/
 </style>
