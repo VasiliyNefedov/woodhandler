@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="slider">
+    <div class="slider-wide">
       <Slider @next="next" @prev="prev" :interval="interval">
         <SliderItem v-for="(pic, index) in slidePics"
                     :key="pic"
@@ -8,7 +8,8 @@
                     :visibleSlide="visibleSlide"
                     :direction="direction"
         >
-          <img :src="require(`@/assets/slider/pic${pic}.jpg`)" width="1200" height="300">
+          <img :src="require(`@/assets/slider/${pic}.png`)" width="1200" height="300" class="img__wide">
+          <img :src="require(`@/assets/slider/${pic}.png`)" width="800" height="200" class="img__narrow">
         </SliderItem>
       </Slider>
     </div>
@@ -43,7 +44,7 @@ export default {
   },
   data() {
     return {
-      slidePics: [`1`, `2`, `3`],
+      slidePics: [`1`, `2`, `4`],
       visibleSlide: 0,
       direction: 'left',
       interval: 8000,
@@ -76,12 +77,24 @@ export default {
 </script>
 
 <style scoped>
-.slider {
+img {
+  margin: 0 calc(100% - 1200px);
+}
+.slider-wide {
   margin: 10px 0;
   width: 100%;
-  height: 300px;
 }
-
+.img__narrow {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  .img__wide {
+    display: none;
+  }
+  .img__narrow {
+    display: initial;
+  }
+}
 .header {
   font-size: 1.2em;
   margin: 100px 0;

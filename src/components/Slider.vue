@@ -53,11 +53,15 @@ export default {
 .carousel {
   position: relative;
   margin: auto;
-  width: 1200px;
+  max-width: 1200px;
   height: 300px;
   overflow: hidden;
 }
-
+@media screen and (max-width: 1200px) {
+  .carousel {
+    height: 200px;
+  }
+}
 button {
   position: absolute;
   text-decoration: none;
